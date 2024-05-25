@@ -9,24 +9,22 @@ const Navbar = () => {
       <Sidebar />
       <div className="wrapper">
         <motion.span
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          style={{ marginLeft: "10px" }}
           transition={{ duration: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.5 }}
         >
-          Lama Dev
+          Shanu Dev
         </motion.span>
         <div className="social">
-          <a href="#">
+          <a href="https://www.facebook.com/share/vrYd5U9kcWDQKR6T/?mibextid=LQQJ4d">
             <img src="/facebook.png" alt="" />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/i_am_d_shannu?igsh=MXU0b2hyYTRnaXllZg%3D%3D&utm_source=qr">
             <img src="/instagram.png" alt="" />
           </a>
-          <a href="#">
-            <img src="/youtube.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="/dribbble.png" alt="" />
+          <a href="https://www.linkedin.com/in/shanmukha-srinivas-b08a6b163/">
+            <img src="/linkedin.png" alt="" />
           </a>
         </div>
       </div>
