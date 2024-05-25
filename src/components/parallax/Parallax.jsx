@@ -27,7 +27,7 @@ const Parallax = ({ type }) => {
       <motion.h1 style={{ y: yText }}>
         {type === "services" ? "What We Do?" : "What We Did?"}
       </motion.h1>
-      <motion.div className="mountains"></motion.div>
+      <motion.div className="mountains" />
       <motion.div
         className="planets"
         style={{
@@ -36,8 +36,8 @@ const Parallax = ({ type }) => {
             type === "services" ? "/planets.png" : "/sun.png"
           })`,
         }}
-      ></motion.div>
-      <motion.div style={{ x: yBg }} className="stars"></motion.div>
+      />
+      <motion.div style={{ x: yBg }} className="stars" />
     </div>
   );
 };

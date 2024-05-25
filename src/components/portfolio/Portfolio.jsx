@@ -5,15 +5,15 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    title: "React Commerce",
+    title: "Klot AI",
     img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    desc: "It is an AI product which is used do the work more than an human works and it will provide more efficiency and it is in progress state",
   },
   {
     id: 2,
     title: "Next.js Blog",
     img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    desc: "It is a policy outbound system which allows user to verify all the policy records, add forms (i.e., state or location based forms) and generate certificate. This application is developed using java for backend and HTML, CSS, JS for frontend.",
   },
   {
     id: 3,
@@ -39,13 +39,13 @@ const Single = ({ item }) => {
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
-    <section >
+    <section>
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt="" />
           </div>
-          <motion.div className="textContainer" style={{y}}>
+          <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <button>See Demo</button>

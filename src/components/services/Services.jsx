@@ -1,6 +1,6 @@
 import { useRef } from "react";
+import { motion } from "framer-motion";
 import "./services.scss";
-import { motion, useInView } from "framer-motion";
 
 const variants = {
   initial: {
@@ -22,17 +22,13 @@ const variants = {
 const Services = () => {
   const ref = useRef();
 
-  const isInView = useInView(ref, { margin: "-100px" });
-
   return (
     <motion.div
-      className="services"
-      variants={variants}
-      initial="initial"
-      // animate="animate"
-      // whileInView="animate"
       ref={ref}
-      animate={"animate"}
+      initial="initial"
+      animate="animate"
+      variants={variants}
+      className="services"
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
@@ -43,16 +39,16 @@ const Services = () => {
       </motion.div>
       <motion.div className="titleContainer" variants={variants}>
         <div className="title">
-          <img src="/people.webp" alt="" />
           <h1>
-            <motion.b whileHover={{color:"orange"}}>Unique</motion.b> Ideas
+            <motion.b whileHover={{ color: "orange" }}>Unique</motion.b> Ideas
           </h1>
         </div>
         <div className="title">
           <h1>
-            <motion.b whileHover={{color:"orange"}}>For Your</motion.b> Business.
+            <motion.b whileHover={{ color: "orange" }}>For Your</motion.b>
+            Business.
           </h1>
-          <button>WHAT WE DO?</button>
+          <button>WHAT I DO?</button>
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
@@ -80,7 +76,6 @@ const Services = () => {
             animi! Ad nam pariatur assumenda quae mollitia libero repellat
             explicabo maiores?
           </p>
-          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -93,7 +88,6 @@ const Services = () => {
             animi! Ad nam pariatur assumenda quae mollitia libero repellat
             explicabo maiores?
           </p>
-          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -106,7 +100,6 @@ const Services = () => {
             animi! Ad nam pariatur assumenda quae mollitia libero repellat
             explicabo maiores?
           </p>
-          <button>Go</button>
         </motion.div>
       </motion.div>
     </motion.div>
