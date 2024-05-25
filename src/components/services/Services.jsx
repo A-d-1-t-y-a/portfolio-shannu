@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
+
 import "./services.scss";
+import { skills } from "../../utils/constant";
 
 const variants = {
   initial: {
@@ -32,75 +34,32 @@ const Services = () => {
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
-          I focus on helping your brand grow
-          <br /> and move forward
+          Skills
+          <br /> and Expertise
         </p>
         <hr />
       </motion.div>
       <motion.div className="titleContainer" variants={variants}>
         <div className="title">
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>Unique</motion.b> Ideas
+            <motion.b whileHover={{ color: "orange" }}>Skills</motion.b> &
+            <span style={{ color: "orange", marginLeft: "10px" }}>
+              Expertise
+            </span>
           </h1>
-        </div>
-        <div className="title">
-          <h1>
-            <motion.b whileHover={{ color: "orange" }}>For Your</motion.b>
-            Business.
-          </h1>
-          <button>WHAT I DO?</button>
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            libero enim nisi aliquam consectetur expedita magni eius ex corrupti
-            animi! Ad nam pariatur assumenda quae mollitia libero repellat
-            explicabo maiores?
-          </p>
-        </motion.div>
+        {skills.map(({ name, icon }) => (
+          <motion.div
+            className="box"
+            key={`skills-${name}`}
+            variants={variants}
+            whileHover={{ background: "lightgray", color: "black" }}
+          >
+            <h2>{name}</h2>
+          </motion.div>
+        ))}
       </motion.div>
     </motion.div>
   );

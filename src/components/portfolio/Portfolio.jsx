@@ -1,33 +1,8 @@
 import { useRef } from "react";
-import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-const items = [
-  {
-    id: 1,
-    title: "Klot AI",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "It is an AI product which is used do the work more than an human works and it will provide more efficiency and it is in progress state",
-  },
-  {
-    id: 2,
-    title: "Next.js Blog",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "It is a policy outbound system which allows user to verify all the policy records, add forms (i.e., state or location based forms) and generate certificate. This application is developed using java for backend and HTML, CSS, JS for frontend.",
-  },
-  {
-    id: 3,
-    title: "Vanilla JS App",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-  },
-  {
-    id: 4,
-    title: "Music App",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-  },
-];
+import "./portfolio.scss";
+import { projects } from "../../utils/constant";
 
 const Single = ({ item }) => {
   const ref = useRef();
@@ -43,12 +18,12 @@ const Single = ({ item }) => {
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
-            <img src={item.img} alt="" />
+            <img src={item.image} alt="" />
           </div>
           <motion.div className="textContainer" style={{ y }}>
-            <h2>{item.title}</h2>
-            <p>{item.desc}</p>
-            <button>See Demo</button>
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
+            {item.href && <a href={item.link}>Repo</a>}
           </motion.div>
         </div>
       </div>
@@ -72,10 +47,10 @@ const Portfolio = () => {
   return (
     <div className="portfolio" ref={ref}>
       <div className="progress">
-        <h1>Featured Works</h1>
-        <motion.div style={{ scaleX }} className="progressBar"></motion.div>
+        <h1>Featured Projects</h1>
+        <motion.div style={{ scaleX }} className="progressBar" />
       </div>
-      {items.map((item) => (
+      {projects.map((item) => (
         <Single item={item} key={item.id} />
       ))}
     </div>

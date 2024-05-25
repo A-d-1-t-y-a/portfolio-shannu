@@ -96,17 +96,40 @@
     }
   }
   .listContainer {
-    flex: 2;
     display: flex;
-    max-width: 1366px;
+    flex-wrap: wrap;
     margin: auto;
+    max-width: 90%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ffa500;
+      border-radius: 6px; /* Round the corners of the scrollbar thumb */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #fff;
+    }
+
+    /* Scrollbar styles for Firefox */
+    // scrollbar-width: thin; /* Width of the scrollbar */
+    // scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar thumb and track */
 
     @include mobile {
       flex-direction: column;
       width: 100%;
     }
-
     .box {
+      margin: 10px;
+      border-radius: 5%;
       padding: 50px;
       border: 0.5px solid gray;
       display: flex;
