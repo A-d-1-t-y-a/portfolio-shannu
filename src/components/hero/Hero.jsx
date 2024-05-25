@@ -1,5 +1,5 @@
-import "./hero.scss";
 import { motion } from "framer-motion";
+import "./hero.scss";
 
 const textVariants = {
   initial: {
@@ -50,10 +50,22 @@ const Hero = () => {
           <motion.h2 variants={textVariants}>Doki Shanmukha Srinivas</motion.h2>
           <motion.h1 variants={textVariants}>Software Developer</motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
+            <motion.a
+              href="#Projects"
+              variants={textVariants}
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.1 }}
+            >
               See the Latest Works
-            </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            </motion.a>
+            <motion.a
+              href="#Contact"
+              variants={textVariants}
+              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Contact Me
+            </motion.a>
           </motion.div>
           <motion.img
             src="/scroll.png"
@@ -63,10 +75,10 @@ const Hero = () => {
         </motion.div>
       </div>
       <motion.div
-        className="slidingTextContainer"
-        variants={sliderVariants}
         initial="initial"
         animate="animate"
+        variants={sliderVariants}
+        className="slidingTextContainer"
       >
         Java Developer
       </motion.div>
