@@ -1,7 +1,11 @@
 import { useRef, useState } from "react";
-import "./contact.scss";
-import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { motion, useInView } from "framer-motion";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+
+import "./contact.scss";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const variants = {
   initial: {
@@ -21,27 +25,54 @@ const variants = {
 const Contact = () => {
   const ref = useRef();
   const formRef = useRef();
-  const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
+
+  const [loading, setLoading] = useState(false);
 
   const isInView = useInView(ref, { margin: "-100px" });
 
+  const handleLoading = () => setLoading((prev) => !prev);
+
   const sendEmail = (e) => {
+    handleLoading();
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_94y20xo",
-        "template_v10u2oh",
+        "service_v2a36qm",
+        "template_z0cw4co",
         formRef.current,
-        "pX_2hasGmGcuvjXIW"
+        "b6J0E_z0cpB9XTsTZ"
       )
       .then(
-        (result) => {
-          setSuccess(true)
+        () => {
+          handleLoading();
+          toast("Mail sent successfully", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            newestOnTop: false,
+            closeOnClick: true,
+            rtl: false,
+            pauseOnFocusLoss: true,
+            draggable: true,
+            pauseOnHover: true,
+            theme: "light",
+            transition: Bounce,
+          });
         },
         (error) => {
-          setError(true);
+          handleLoading();
+          toast(error.text, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+          });
         }
       );
   };
@@ -58,15 +89,15 @@ const Contact = () => {
         <motion.h1 variants={variants}>Let’s work together</motion.h1>
         <motion.div className="item" variants={variants}>
           <h2>Mail</h2>
-          <span>hello@react.dev</span>
+          <span>shanmukhasrinivas4 46@gmail.com</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Address</h2>
-          <span>Hello street New York</span>
+          <span>Hyderabad</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Phone</h2>
-          <span>+1 234 5678</span>
+          <span>(+91) 8919043453</span>
         </motion.div>
       </motion.div>
       <div className="formContainer">
@@ -106,14 +137,13 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="name"/>
-          <input type="email" required placeholder="Email" name="email"/>
-          <textarea rows={8} placeholder="Message" name="message"/>
-          <button>Submit</button>
-          {error && "Error"}
-          {success && "Success"}
+          <input type="text" required placeholder="Name" name="name" />
+          <input type="email" required placeholder="Email" name="email" />
+          <textarea rows={8} placeholder="Message" name="message" />
+          <button>{loading ? <div className="loading" /> : "Submit"}</button>
         </motion.form>
       </div>
+      <ToastContainer />
     </motion.div>
   );
 };

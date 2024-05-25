@@ -89,3 +89,29 @@
     }
   }
 }
+
+.loading{
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  border-radius: 100%;
+  border:2px dashed #663399;
+  animation:spin-animation 1s alternate-reverse infinite;
+}
+
+@keyframes spin-animation {
+ 0%{
+  rotate: 0deg;
+  scale: 0.5;
+  border-left:2px solid #000;
+  border-top:2px double #000;
+  border-bottom:2px dashed #000;
+} 
+100%{
+  scale: 1.5;
+  rotate: 3600deg;
+  border-left:2px dotted #fff;
+  border-top:2px double #000;
+  border-bottom:2px dashed #FFF;
+ }
+}
