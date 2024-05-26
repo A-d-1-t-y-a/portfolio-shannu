@@ -9,9 +9,13 @@ const Navbar = () => {
       <Sidebar />
       <div className="wrapper">
         <motion.span
-          style={{ marginLeft: "10px" }}
           transition={{ duration: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.5 }}
+        />
+        <motion.span
+          transition={{ duration: 0.5 }}
+          animate={{ opacity: 1, scale: 1.5 }}
           initial={{ opacity: 0, scale: 0.5 }}
         >
           Shanu Dev
