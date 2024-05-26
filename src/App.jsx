@@ -1,11 +1,11 @@
 import "./app.scss";
+import Skills from "./components/skills";
 import Hero from "./components/hero/Hero";
+import Projects from "./components/projects";
 import Cursor from "./components/cursor/Cursor";
 import Navbar from "./components/navbar/Navbar";
 import Contact from "./components/contact/Contact";
 import Parallax from "./components/parallax/Parallax";
-import Services from "./components/services/Services";
-import Portfolio from "./components/portfolio/Portfolio";
 
 const App = () => {
   return (
@@ -19,12 +19,12 @@ const App = () => {
         <Parallax type="Skills" />
       </section>
       <section>
-        <Services />
+        <Skills />
       </section>
       <section id="Projects">
         <Parallax type="Projects" />
       </section>
-      <Portfolio />
+      <Projects />
       <section id="Contact">
         <Contact />
       </section>
