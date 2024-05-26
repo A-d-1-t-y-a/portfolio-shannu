@@ -80,9 +80,9 @@ const Contact = () => {
   return (
     <motion.div
       ref={ref}
+      initial="initial"
       className="contact"
       variants={variants}
-      initial="initial"
       whileInView="animate"
     >
       <motion.div className="textContainer" variants={variants}>

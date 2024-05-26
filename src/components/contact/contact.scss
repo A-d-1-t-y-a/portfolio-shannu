@@ -2,15 +2,16 @@
 
 .contact {
   height: 100%;
-  max-width: 1366px;
   margin: auto;
   display: flex;
+  max-width: 1366px;
   align-items: center;
   gap: 50px;
 
   @include mobile {
     width: 100%;
     padding: 10px;
+    overflow: hidden auto;
     flex-direction: column;
   }
 
@@ -44,12 +45,11 @@
   .formContainer {
     flex: 1;
     position: relative;
-    
+
     @include mobile {
       padding: 50px;
       width: 100%;
     }
-
 
     .phoneSvg {
       stroke: orange;
@@ -90,28 +90,28 @@
   }
 }
 
-.loading{
+.loading {
   width: 20px;
   height: 20px;
   margin: 0 auto;
   border-radius: 100%;
-  border:2px dashed #663399;
-  animation:spin-animation 1s alternate-reverse infinite;
+  border: 2px dashed #663399;
+  animation: spin-animation 1s alternate-reverse infinite;
 }
 
 @keyframes spin-animation {
- 0%{
-  rotate: 0deg;
-  scale: 0.5;
-  border-left:2px solid #000;
-  border-top:2px double #000;
-  border-bottom:2px dashed #000;
-} 
-100%{
-  scale: 1.5;
-  rotate: 3600deg;
-  border-left:2px dotted #fff;
-  border-top:2px double #000;
-  border-bottom:2px dashed #FFF;
- }
+  0% {
+    rotate: 0deg;
+    scale: 0.5;
+    border-left: 2px solid #000;
+    border-top: 2px double #000;
+    border-bottom: 2px dashed #000;
+  }
+  100% {
+    scale: 1.5;
+    rotate: 3600deg;
+    border-left: 2px dotted #fff;
+    border-top: 2px double #000;
+    border-bottom: 2px dashed #fff;
+  }
 }
