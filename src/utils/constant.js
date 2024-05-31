@@ -154,14 +154,11 @@ export const skills = {
 };
 
 export const dynamicsColors = [
-  "#071a25",
-  "#10081e",
-  "#081629",
-  "#0f1321",
-  "#1c181f",
-  "#0c0121",
-  "#07182b",
-  "#1b1717",
-  "#16151f",
-  "#0d0c28",
+  "#6a1b9a", // Deep Purple
+  "#303f9f", // Rich Blue
+  "#00796b", // Teal
+  "#7b1fa2", // Purple
+  "#0288d1", // Light Blue
+  "#388e3c", // Green
+  "#f57c00", // Orange
 ];
