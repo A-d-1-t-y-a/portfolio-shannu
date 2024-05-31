@@ -37,223 +37,131 @@ export const projects = [
   },
 ];
 
-export const skills = [
-  {
-    name: "HTML",
-    icon: "html5",
-  },
-  {
-    name: "CSS",
-    icon: "css3",
-  },
-  {
-    name: "Javascript",
-    icon: "js",
-  },
-  {
-    name: "React",
-    icon: "react",
-  },
-  {
-    name: "Python",
-    icon: "python",
-  },
-  {
-    name: "Java",
-    icon: "java",
-  },
-  {
-    name: "cassandra",
-    icon: "cassandra",
-  },
-  {
-    name: "mysql",
-    icon: "mysql",
-  },
-  {
-    name: "mongodb",
-    icon: "mongodb",
-  },
-  {
-    name: "git",
-    icon: "git",
-  },
-  {
-    name: "github",
-    icon: "github",
-  },
-  {
-    name: "netbeans",
-    icon: "netbeans",
-  },
-  {
-    name: "eclipse",
-    icon: "eclipse",
-  },
-  {
-    name: "intellij idea",
-    icon: "intellij-idea",
-  },
-  {
-    name: "gradle",
-    icon: "gradle",
-  },
-  {
-    name: "jenkins",
-    icon: "jenkins",
-  },
-  {
-    name: "maven",
-    icon: "maven",
-  },
-  {
-    name: "software development",
-    icon: "software-development",
-  },
-  {
-    name: "springboot java",
-    icon: "springboot-java",
-  },
-  {
-    name: "mysql database administration",
-    icon: "mysql-database-administration",
-  },
-  {
-    name: "microservices",
-    icon: "microservices",
-  },
-  {
-    name: "hibernate",
-    icon: "hibernate",
-  },
-  {
-    name: "framework",
-    icon: "framework",
-  },
-  {
-    name: "rest api design",
-    icon: "rest-api-design",
-  },
-  {
-    name: "postman api",
-    icon: "postman-api",
-  },
-  {
-    name: "Python Software Developer",
-    icon: "python-software-developer",
-  },
-  {
-    name: "React.js",
-    icon: "react-js",
-  },
-];
-[
-  {
-    name: "HTML",
-    icon: "html5",
-  },
-  {
-    name: "CSS",
-    icon: "css3",
-  },
-  {
-    name: "Javascript",
-    icon: "js",
-  },
-  {
-    name: "React",
-    icon: "react",
-  },
-  {
-    name: "Python",
-    icon: "python",
-  },
-  {
-    name: "Java",
-    icon: "java",
-  },
-  {
-    name: "cassandra",
-    icon: "cassandra",
-  },
-  {
-    name: "mysql",
-    icon: "mysql",
-  },
-  {
-    name: "mongodb",
-    icon: "mongodb",
-  },
-  {
-    name: "git",
-    icon: "git",
-  },
-  {
-    name: "github",
-    icon: "github",
-  },
-  {
-    name: "netbeans",
-    icon: "netbeans",
-  },
-  {
-    name: "eclipse",
-    icon: "eclipse",
-  },
-  {
-    name: "intellij idea",
-    icon: "intellij-idea",
-  },
-  {
-    name: "gradle",
-    icon: "gradle",
-  },
-  {
-    name: "jenkins",
-    icon: "jenkins",
-  },
-  {
-    name: "maven",
-    icon: "maven",
-  },
-  {
-    name: "software development",
-    icon: "software-development",
-  },
-  {
-    name: "springboot java",
-    icon: "springboot-java",
-  },
-  {
-    name: "mysql database administration",
-    icon: "mysql-database-administration",
-  },
-  {
-    name: "microservices",
-    icon: "microservices",
-  },
-  {
-    name: "hibernate",
-    icon: "hibernate",
-  },
-  {
-    name: "framework",
-    icon: "framework",
-  },
-  {
-    name: "rest api design",
-    icon: "rest-api-design",
-  },
-  {
-    name: "postman api",
-    icon: "postman-api",
-  },
-  {
-    name: "Python Software Developer",
-    icon: "python-software-developer",
-  },
-  {
-    name: "React.js",
-    icon: "react-js",
-  },
+export const skills = {
+  "Frontend Skills": [
+    {
+      name: "html",
+      icon: "https://example.com/icons/html.png",
+    },
+    {
+      name: "css",
+      icon: "https://example.com/icons/css.png",
+    },
+    {
+      name: "javascript",
+      icon: "https://example.com/icons/javascript.png",
+    },
+    {
+      name: "react.js",
+      icon: "https://example.com/icons/reactjs.png",
+    },
+  ],
+  "Python Skills": [
+    {
+      name: "python",
+      icon: "https://example.com/icons/python.png",
+    },
+  ],
+  "Java Skills": [
+    {
+      name: "java",
+      icon: "https://example.com/icons/java.png",
+    },
+    {
+      name: "springboot java",
+      icon: "https://example.com/icons/springboot.png",
+    },
+  ],
+  "Database Skills": [
+    {
+      name: "cassandra",
+      icon: "https://example.com/icons/cassandra.png",
+    },
+    {
+      name: "mysql",
+      icon: "https://example.com/icons/mysql.png",
+    },
+    {
+      name: "mongodb",
+      icon: "https://example.com/icons/mongodb.png",
+    },
+    {
+      name: "mysql database administration",
+      icon: "https://example.com/icons/mysqldbadmin.png",
+    },
+  ],
+  Tools: [
+    {
+      name: "git",
+      icon: "https://example.com/icons/git.png",
+    },
+    {
+      name: "github",
+      icon: "https://example.com/icons/github.png",
+    },
+    {
+      name: "netbeans",
+      icon: "https://example.com/icons/netbeans.png",
+    },
+    {
+      name: "eclipse",
+      icon: "https://example.com/icons/eclipse.png",
+    },
+    {
+      name: "intellij idea",
+      icon: "https://example.com/icons/intellij.png",
+    },
+    {
+      name: "gradle",
+      icon: "https://example.com/icons/gradle.png",
+    },
+    {
+      name: "jenkins",
+      icon: "https://example.com/icons/jenkins.png",
+    },
+    {
+      name: "maven",
+      icon: "https://example.com/icons/maven.png",
+    },
+  ],
+  "Development Skills": [
+    {
+      name: "software development",
+      icon: "https://example.com/icons/softwaredev.png",
+    },
+    {
+      name: "microservices",
+      icon: "https://example.com/icons/microservices.png",
+    },
+    {
+      name: "framework",
+      icon: "https://example.com/icons/framework.png",
+    },
+    {
+      name: "rest api design",
+      icon: "https://example.com/icons/apidesign.png",
+    },
+    {
+      name: "postman api",
+      icon: "https://example.com/icons/postman.png",
+    },
+    {
+      name: "hibernate",
+      icon: "https://example.com/icons/hibernate.png",
+    },
+  ],
+  // "Others": []
+};
+
+export const dynamicsColors = [
+  "#071a25",
+  "#10081e",
+  "#081629",
+  "#0f1321",
+  "#1c181f",
+  "#0c0121",
+  "#07182b",
+  "#1b1717",
+  "#16151f",
+  "#0d0c28",
 ];

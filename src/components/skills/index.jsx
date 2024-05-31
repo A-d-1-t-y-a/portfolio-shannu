@@ -1,13 +1,20 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCards, Navigation } from "swiper/modules";
 
-import "./services.scss";
-import { skills } from "../../utils/constant";
+import "swiper/css"; // Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./skills.scss";
+import { dynamicsColors, skills } from "../../utils/constant";
 
 const variants = {
   initial: {
-    x: -500,
-    y: 100,
+    x: 0,
+    y: 1000,
     opacity: 0,
   },
   animate: {
@@ -21,16 +28,20 @@ const variants = {
   },
 };
 
-const Services = () => {
+const Skills = () => {
   const ref = useRef();
+
+  const handleGenerateColor = (idx) =>
+    dynamicsColors[idx % dynamicsColors.length];
 
   return (
     <motion.div
       ref={ref}
       initial="initial"
       animate="animate"
+      whileInView="animate"
+      className="skills"
       variants={variants}
-      className="services"
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
@@ -50,19 +61,65 @@ const Services = () => {
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
-        {skills.map(({ name, icon }) => (
-          <motion.div
-            className="box"
-            key={`skills-${name}`}
-            variants={variants}
-            whileHover={{ background: "lightgray", color: "black" }}
-          >
-            <h2>{name}</h2>
-          </motion.div>
-        ))}
+        <Swiper
+          navigation
+          loop={true}
+          speed={800}
+          effect="creative"
+          grabCursor={true}
+          mousewheel={true}
+          spaceBetween={20}
+          loopedSlides={1.5}
+          loopedSlidesLimit={false}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          creativeEffect={{
+            limitProgress: 1, // Apply the same state to all slides after the next/previous
+            next: {
+              translate: ["100%", 0, 0],
+              rotate: [0, 0, -10],
+              opacity: 0.8,
+              scale: 0.9,
+              shadow: true,
+              origin: "right center",
+            },
+            prev: {
+              translate: ["-100%", 0, 0],
+              rotate: [0, 0, 10],
+              opacity: 0.8,
+              scale: 0.9,
+              shadow: true,
+              origin: "left center",
+            },
+            perspective: true,
+            progressMultiplier: 1,
+            shadowPerProgress: false,
+          }}
+          pagination={{ clickable: true }}
+          modules={[EffectCards, Autoplay, Navigation]}
+          cardsEffect={{ rotate: false, perSlideOffset: 1.5 }}
+        >
+          {Object.keys(skills).map((skill, idx) => (
+            <SwiperSlide
+              className="slider"
+              style={{ background: handleGenerateColor(idx) }}
+              key={`swiper-slide-${name}`}
+            >
+              <p>{skill}</p>
+              {skills[skill].map((skill) => (
+                <div className="skill" key={`skill-${skill.name}`}>
+                  <img src={skill.icon} alt={skill.name} />
+                  <p>{skill.name}</p>
+                </div>
+              ))}
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </motion.div>
     </motion.div>
   );
 };
 
-export default Services;
+export default Skills;
